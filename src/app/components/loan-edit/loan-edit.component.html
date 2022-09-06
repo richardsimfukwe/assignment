@@ -1,0 +1,106 @@
+<div class="row justify-content-center">
+    <div class="col-md-4 register-employee">
+        <!-- form card register -->
+        <div class="card card-outline-secondary">
+            <div class="card-header">
+                <h3 class="mb-0">Edit Employee</h3>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="inputName">Client Name</label>
+                        <input class="form-control" type="text" formControlName="clientName" />
+                        <div class="invalid-feedback" *ngIf="submitted && myForm['clientName'].errors?.['required']">
+                            Name is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3">Client Email</label>
+                        <input class="form-control" type="text" formControlName="clientEmail" />
+                        <!-- error -->
+                        <div class="invalid-feedback" *ngIf="submitted && myForm['clientEmail'].errors?.['required']">
+                            Enter your email.
+                        </div>
+                        <div class="invalid-feedback" *ngIf="submitted && myForm['clientEmail'].errors?.['pattern']">
+                            Enter valid email.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputVerify3">Client Mobile No</label>
+                        <input class="form-control" type="text" formControlName="clientPhoneNumber" />
+                        <!-- error -->
+                        <div class="invalid-feedback" *ngIf="submitted && myForm['clientPhoneNumber'].errors?.['required']">
+                            Enter Client phone number.
+                        </div>
+                        <div class="invalid-feedback" *ngIf="submitted && myForm['clientPhoneNumber'].errors?.['pattern']">
+                            Enter Numbers Only
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3">Client Designation</label>
+                        <select class="custom-select form-control" (change)="updateDesignation($event.target.value)"
+                            formControlName="clientDesignation">
+                            <option value="">Choose...</option>
+                            <option *ngFor="let clientDesign of clientDesignations" value="{{ clientDesign }}">
+                                {{ clientDesign }}
+                            </option>
+                        </select>
+                        <!-- error -->
+                        <div class="invalid-feedback" *ngIf="submitted && myForm['clientDesignation'].errors?.['required']">
+                            Choose designation.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3">Loan Amount</label>
+                        <select class="custom-select form-control" (change)="updateAmount($event.target.value)"
+                            formControlName="loanAmount">
+                            <option value="">Choose...</option>
+                            <option *ngFor="let amount of loanAmounts" value="{{ amount }}">
+                                {{ amount }}
+                            </option>
+                        </select>
+                        <!-- error -->
+                        <div class="invalid-feedback" *ngIf="submitted && myForm['loanAmount'].errors?.['required']">
+                            Choose Amount.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3">Loan Tenures</label>
+                        <select class="custom-select form-control" (change)="updateTenure($event.target.value)"
+                            formControlName="loanTenure">
+                            <option value="">Choose...</option>
+                            <option *ngFor="let tenure of loanTenures" value="{{ tenure }}">
+                                {{ tenure }}
+                            </option>
+                        </select>
+                        <!-- error -->
+                        <div class="invalid-feedback" *ngIf="submitted && myForm['loanTenure'].errors?.['required']">
+                            Choose Loan Tenure.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3">Loan Interest</label>
+                        <select class="custom-select form-control" (change)="updateInterest($event.target.value)"
+                            formControlName="loanInterest">
+                            <option value="">Choose...</option>
+                            <option *ngFor="let interest of loanInterests" value="{{ interest }}">
+                                {{ interest }}
+                            </option>
+                        </select>
+                        <!-- error -->
+                        <div class="invalid-feedback" *ngIf="submitted && myForm['loanInterest'].errors?.['required']">
+                            Choose Loan Interest.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-success btn-lg btn-block" type="submit">
+                            Update
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- form  -->
+    </div>
+</div>
