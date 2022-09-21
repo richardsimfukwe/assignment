@@ -5,7 +5,7 @@ import { LoanEditComponent } from './components/loan-edit/loan-edit.component';
 import { LoanListComponent } from './components/loan-list/loan-list.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'create-employee' },
+  { path: '', pathMatch: 'full', redirectTo: 'create-loan' },
   { path: 'create-loan', component: LoanCreateComponent },
   { path: 'edit-loan/:id', component: LoanEditComponent },
   { path: 'loans-list', component: LoanListComponent } 
