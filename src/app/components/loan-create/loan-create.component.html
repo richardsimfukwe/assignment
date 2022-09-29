@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputPassword3">Loan Amount</label>
+                    <label for="inputPassword3">Loan Amount (k)</label>
                     <select class="custom-select form-control" (change)="updateAmount($event.target.value)"
                         formControlName="loanAmount">
                         <option value="">Choose...</option>
@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputPassword3">Loan Tenures</label>
+                    <label for="inputPassword3">Loan Tenures (Years)</label>
                     <select class="custom-select form-control" (change)="updateTenure($event.target.value)"
                         formControlName="loanTenure">
                         <option value="">Choose...</option>
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputPassword3">Loan Interest</label>
+                    <label for="inputPassword3">Loan Interest (%)</label>
                     <select class="custom-select form-control" (change)="updateInterest($event.target.value)"
                         formControlName="loanInterest">
                         <option value="">Choose...</option>

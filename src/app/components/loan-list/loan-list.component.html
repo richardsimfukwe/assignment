@@ -23,9 +23,9 @@
           <td>{{loan.clientEmail}}</td>
           <td>{{loan.clientDesignation}}</td>
           <td>{{loan.clientPhoneNumber}}</td>
-          <td>{{loan.loanAmount}}</td>
-          <td>{{loan.loanTenure}}</td>
-          <td>{{loan.loanInterest}}</td>
+          <td>K {{loan.loanAmount}}</td>
+          <td>{{loan.loanTenure}} Year(s)</td>
+          <td>{{loan.loanInterest}} %</td>
           <td class="text-center edit-block">
             <span class="edit" [routerLink]="['/edit-loan/', loan._id]">
               <button type="button" class="btn btn-success btn-sm">Edit</button>
